@@ -34,7 +34,7 @@ public class MainViewController implements Initializable {
 		
 	@FXML
 	public void onMenuItemTeacherAction() {
-		System.out.println("onMenuItemTeacherAction");
+		loadView("/gui/TeacherList.fxml");
 	}
 		
 	@FXML
@@ -46,7 +46,7 @@ public class MainViewController implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {		
 	}
 	
-	private synchronized void loadView(String absoluteName) {
+	private synchronized  void loadView(String absoluteName) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox newVbox = loader.load();
@@ -63,5 +63,4 @@ public class MainViewController implements Initializable {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
 	}
-
 }
